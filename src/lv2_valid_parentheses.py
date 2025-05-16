@@ -23,5 +23,12 @@ True
 """
 
 def solution(s):
-    # 여기에 코드를 작성하세요
-    pass 
+    stack = []
+    bracket_map = {')': '(', '}': '{', ']': '['}
+    for char in s:
+        if char in bracket_map.values():
+            stack.append(char)
+        elif char in bracket_map:
+            if not stack or stack.pop() != bracket_map[char]:
+                return False
+    return not stack
