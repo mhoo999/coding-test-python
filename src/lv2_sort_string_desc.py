@@ -18,5 +18,4 @@
 """
 
 def solution(s):
-    # 소문자는 대문자보다 크게, 내림차순 정렬
     return ''.join(sorted(s, key=lambda x: (x.islower(), x), reverse=True))
